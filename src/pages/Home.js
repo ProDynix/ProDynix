@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Button, Card, SectionHeading } from '../components';
+import founder1 from '../assets/founder1.jpg';
+import founder2 from '../assets/founder2.jpg';
 
 // Icons for solution areas
 const Icons = {
@@ -350,13 +352,10 @@ const Home = () => {
             <div className="group bg-gradient-to-br from-forge-slate-800/50 to-forge-navy/30 border border-forge-slate-700/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 hover:border-forge-accent/30 transition-all duration-300">
               <div className="flex flex-col items-center text-center">
                 <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-forge-slate-700/50 border-2 border-forge-slate-600/50 overflow-hidden mb-5 group-hover:border-forge-accent/40 transition-colors">
-                  {/* Placeholder - Replace with actual photo */}
-                  <div className="w-full h-full bg-gradient-to-br from-forge-accent/20 to-forge-slate-700 flex items-center justify-center">
-                    <span className="text-3xl sm:text-4xl font-bold text-forge-accent/60">S</span>
-                  </div>
+                  <img src={founder1} alt="Shvang Jagwan" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-semibold text-forge-gray-50 mb-1">
-                  Shvang Patel
+                  Shvang Jagwan
                 </h3>
                 <p className="text-forge-accent font-medium text-sm sm:text-base mb-3">
                   Co-Founder & Engineering
@@ -371,13 +370,10 @@ const Home = () => {
             <div className="group bg-gradient-to-br from-forge-slate-800/50 to-forge-navy/30 border border-forge-slate-700/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 hover:border-forge-accent/30 transition-all duration-300">
               <div className="flex flex-col items-center text-center">
                 <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-forge-slate-700/50 border-2 border-forge-slate-600/50 overflow-hidden mb-5 group-hover:border-forge-accent/40 transition-colors">
-                  {/* Placeholder - Replace with actual photo */}
-                  <div className="w-full h-full bg-gradient-to-br from-forge-accent/20 to-forge-slate-700 flex items-center justify-center">
-                    <span className="text-3xl sm:text-4xl font-bold text-forge-accent/60">A</span>
-                  </div>
+                  <img src={founder2} alt="Anagd Singh" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-semibold text-forge-gray-50 mb-1">
-                  Co-Founder Name
+                  Anagd Singh
                 </h3>
                 <p className="text-forge-accent font-medium text-sm sm:text-base mb-3">
                   Co-Founder & Operations
