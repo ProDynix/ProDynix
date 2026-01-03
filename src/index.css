@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0B0614;
+  color: #E5E7EB;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal scroll */
+#root {
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar - hide on mobile for cleaner look */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #120A24;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2D2654;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4F46E5;
+  }
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(79, 70, 229, 0.3);
+  color: #E5E7EB;
+}
+
+/* Focus states - larger for touch devices */
+a:focus,
+button:focus {
+  outline: 2px solid #6366F1;
+  outline-offset: 2px;
+}
+
+/* Touch-friendly tap targets */
+@media (max-width: 768px) {
+  a, button {
+    min-height: 44px;
+  }
+}
+
+/* Touch manipulation for better mobile response */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Prevent text selection during menu interaction */
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Mobile menu body lock */
+body.menu-open {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure mobile menu is above everything */
+.mobile-menu-overlay {
+  z-index: 51;
+}
+
+.mobile-menu-panel {
+  z-index: 52;
+}
+
+.mobile-menu-button {
+  z-index: 60;
+}
+
+/* Smooth menu transitions with hardware acceleration */
+.menu-slide-enter {
+  transform: translateX(100%);
+}
+
+.menu-slide-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-out;
+}
+
+.menu-slide-exit {
+  transform: translateX(0);
+}
+
+.menu-slide-exit-active {
+  transform: translateX(100%);
+  transition: transform 300ms ease-in;
+}
+
+/* Overscroll behavior for menu */
+.overscroll-contain {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .menu-slide-enter-active,
+  .menu-slide-exit-active {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-highlight {
+    color: #F97316;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%) 1;
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(rgba(79, 70, 229, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79, 70, 229, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Smaller grid on mobile */
+  @media (max-width: 640px) {
+    .bg-grid {
+      background-size: 30px 30px;
+    }
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(135deg, #0B0614 0%, #1E1B3A 50%, #120A24 100%);
+  }
+
+  .card-glow {
+    box-shadow: 0 0 40px rgba(79, 70, 229, 0.1);
+  }
+
+  /* Reduce glow on mobile for performance */
+  @media (max-width: 640px) {
+    .card-glow {
+      box-shadow: 0 0 20px rgba(79, 70, 229, 0.08);
+    }
+  }
+
+  /* Hide decorative elements on mobile */
+  .hide-mobile {
+    @apply hidden sm:block;
+  }
+
+  /* Full width buttons on mobile */
+  .btn-mobile-full {
+    @apply w-full sm:w-auto;
+  }
+
+  /* Safe area insets for notched devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Responsive text utilities */
+  .text-responsive-xl {
+    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl;
+  }
+
+  .text-responsive-lg {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+
+  .text-responsive-md {
+    @apply text-xl sm:text-2xl;
+  }
+
+  /* Touch-friendly spacing */
+  .touch-spacing {
+    @apply space-y-3 sm:space-y-2;
+  }
+}
