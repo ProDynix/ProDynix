@@ -49,7 +49,9 @@ const Footer = () => {
               <div className="flex space-x-3">
                 {/* Social Links */}
                 <a
-                  href="#"
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-11 h-11 sm:w-10 sm:h-10 rounded-lg bg-forge-slate-700/50 flex items-center justify-center text-forge-slate-400 hover:text-forge-accent active:bg-forge-accent/20 hover:bg-forge-accent/10 transition-all duration-200"
                   aria-label="LinkedIn"
                 >
@@ -58,7 +60,9 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-11 h-11 sm:w-10 sm:h-10 rounded-lg bg-forge-slate-700/50 flex items-center justify-center text-forge-slate-400 hover:text-forge-accent active:bg-forge-accent/20 hover:bg-forge-accent/10 transition-all duration-200"
                   aria-label="Twitter"
                 >
@@ -67,7 +71,9 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-11 h-11 sm:w-10 sm:h-10 rounded-lg bg-forge-slate-700/50 flex items-center justify-center text-forge-slate-400 hover:text-forge-accent active:bg-forge-accent/20 hover:bg-forge-accent/10 transition-all duration-200"
                   aria-label="Instagram"
                 >
